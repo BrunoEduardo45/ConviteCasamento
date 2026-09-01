@@ -1,0 +1,11 @@
+CONVITE INTERATIVO — BRUNO E BEATRIZ
+
+Para visualizar, abra o arquivo index.html em qualquer navegador.
+
+Estrutura:
+- index.html: conteúdo do convite
+- style.css: aparência, cores e responsividade
+- script.js: contagem regressiva, calendário, endereço e WhatsApp
+- assets/: fotografias usadas no convite
+
+Não é necessário instalar programas ou dependências.
