@@ -15,14 +15,6 @@ function atualizarContagem() {
 atualizarContagem();
 setInterval(atualizarContagem, 1000);
 
-document.getElementById('calendarButton').addEventListener('click', () => {
-  const evento = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'BEGIN:VEVENT', 'DTSTART:20261016T130000Z', 'DTEND:20261016T170000Z', 'SUMMARY:Casamento de Bruno Eduardo e Beatriz Biscarde', 'LOCATION:Rua Professor Martagão Gesteira, 477, Graça', 'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(new Blob([evento], { type: 'text/calendar' }));
-  link.download = 'casamento-bruno-e-beatriz.ics';
-  link.click();
-});
-
 document.getElementById('copyButton').addEventListener('click', async (event) => {
   await navigator.clipboard.writeText('Rua Professor Martagão Gesteira, 477, Graça');
   event.currentTarget.textContent = 'Endereço copiado';

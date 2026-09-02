@@ -18,7 +18,9 @@ body {
     margin: 0;
     background: var(--preto);
     color: var(--claro);
-    font-family: Georgia, "Times New Roman", serif
+    font-family: Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility
 }
 
 button,
@@ -35,7 +37,7 @@ main {
 }
 
 .section {
-    padding: 60px max(18px, calc((100vw - 850px)/2));
+    padding: 70px max(18px, calc((100vw - 850px)/2));
     text-align: center
 }
 
@@ -89,45 +91,70 @@ main {
 .hero-content {
     z-index: 2;
     margin-top: auto;
-    padding: 0 25px 45px;
-    width: min(94%, 900px)
+    padding: 0 25px 52px;
+    width: min(94%, 920px)
 }
 
 .hero h1 {
-    font-size: clamp(43px, 8vw, 86px);
+    position: relative;
+    font-size: clamp(44px, 7vw, 90px);
     font-weight: 400;
-    line-height: .9;
-    margin: 15px 0
+    line-height: .72;
+    margin: 18px 0 12px;
+    letter-spacing: -.05em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .35)
 }
 
 .hero h1 em {
+    position: relative;
     display: block;
     color: var(--vermelho);
-    font-size: .65em;
-    line-height: 1.2
+    font-size: clamp(1.5em, 2.4vw, 2.8em);
+    line-height: .7;
+    margin: -8px 0 -10px;
+    letter-spacing: -.04em;
+    transform: translateY(-0.06em) scale(1.08);
+    z-index: 3
 }
 
 .date {
     display: block;
-    font-size: clamp(21px, 4vw, 30px);
-    letter-spacing: .14em
+    font-size: clamp(20px, 3.3vw, 32px);
+    letter-spacing: .16em;
+    margin-top: 10px;
+    font-weight: 600
 }
 
 .hero small {
     display: block;
-    margin-top: 8px;
+    margin-top: 10px;
     text-transform: uppercase;
-    letter-spacing: .18em
+    letter-spacing: .2em;
+    font-size: 11px;
+    color: #d8c9bd
 }
 
 .scroll {
-    display: block;
-    margin-top: 25px;
-    color: #ddd;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 18px;
+    color: #f3ece3;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: .2em;
-    font: 10px Arial, sans-serif
+    letter-spacing: .22em;
+    font: 700 10px Arial, sans-serif;
+    background: linear-gradient(180deg, #8b1d27 0%, #641218 100%);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 999px;
+    box-shadow: 0 10px 22px rgba(125, 18, 28, .3), inset 0 1px 0 rgba(255, 255, 255, .18);
+    opacity: .96;
+    transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease
+}
+
+.scroll:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(125, 18, 28, .38), inset 0 1px 0 rgba(255, 255, 255, .2)
 }
 
 .reveal {
@@ -142,13 +169,17 @@ main {
 }
 
 .story {
-    background: radial-gradient(circle at 50% 15%, #1e1717, #090909 48%)
+    background: radial-gradient(circle at 50% 15%, #1e1717, #090909 48%);
+    padding-top: 84px;
+    padding-bottom: 72px
 }
 
 .story h2 {
-    font-size: clamp(31px, 6vw, 55px);
+    font-size: clamp(31px, 5.6vw, 58px);
     font-weight: 400;
-    line-height: 1.17
+    line-height: 1.12;
+    max-width: 760px;
+    margin: 0 auto 30px
 }
 
 .story h2 i,
@@ -157,18 +188,18 @@ main {
 }
 
 .story>p:not(.ornament) {
-    font-size: clamp(18px, 2.5vw, 23px);
-    line-height: 1.65;
+    font-size: clamp(18px, 2.2vw, 23px);
+    line-height: 1.7;
     color: #cfc5bc;
-    max-width: 690px;
-    margin: 20px auto
+    max-width: 700px;
+    margin: 18px auto
 }
 
 .story strong {
     display: block;
     font-size: clamp(25px, 4vw, 36px);
     font-weight: 400;
-    margin-top: 35px
+    margin-top: 42px
 }
 
 .photo-break {
@@ -183,29 +214,45 @@ main {
     filter: grayscale(1) contrast(1.08)
 }
 
+.when {
+    padding-top: 72px;
+    padding-bottom: 32px
+}
+
 .when h2,
 .count-section h2,
 .rsvp h2 {
-    font-size: 38px;
+    font-size: clamp(34px, 5vw, 48px);
     font-weight: 400;
     margin-top: 0
 }
 
 .details {
-    display: flex;
-    border-block: 1px solid var(--linha);
-    margin: 18px 0 28px;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+    width: min(100%, 760px);
+    margin: 22px auto 30px;
+    overflow: hidden
 }
 
 .details div {
-    padding: 18px 12px;
+    padding: 20px 12px;
     color: var(--vermelho);
     font-size: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
+    min-height: 118px;
+    text-align: center;
+    border-left: 1px solid var(--linha)
+}
+
+.details div:first-child {
+    border-left: none
 }
 
 .detail-item .icon {
@@ -214,15 +261,15 @@ main {
 }
 
 .detail-item .label {
-    font: 12px Arial, sans-serif;
+    font: 11px Arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: .18em;
-    color: #a99c91;
+    color: #a99c91
 }
 
 .detail-item .value {
-    font-size: 20px;
-    color: var(--claro);
+    font-size: clamp(20px, 3vw, 28px);
+    color: var(--claro)
 }
 
 .details div+div {
@@ -254,12 +301,14 @@ main {
     padding: 15px 22px;
     text-decoration: none;
     border: 1px solid var(--vinho);
-    transition: .25s
+    border-radius: 8px;
+    transition: transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease
 }
 
 .primary {
     background: var(--vinho);
-    color: white
+    color: white;
+    box-shadow: 0 10px 22px rgba(125, 18, 28, .22)
 }
 
 .primary:hover {
@@ -273,14 +322,34 @@ main {
     border-color: var(--linha)
 }
 
+.ghost:hover {
+    border-color: rgba(164, 139, 115, .9);
+    background: rgba(255, 255, 255, .02)
+}
+
 .count-section {
-    background: var(--claro);
-    color: #15100e
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, .75), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(28, 20, 18, .04), transparent 20%),
+        repeating-linear-gradient(0deg, rgba(38, 28, 22, .03), rgba(38, 28, 22, .03) 1px, transparent 1px, transparent 4px),
+        var(--claro);
+    color: #15100e;
+    padding-top: 26px;
+    padding-bottom: 26px
 }
 
 .countdown {
     display: grid;
-    grid-template-columns: repeat(4, 1fr)
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 760px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, .12);
+    border: none;
+    box-shadow: none
+}
+
+.countdown div {
+    padding: 18px 12px 14px
 }
 
 .countdown div+div {
@@ -289,52 +358,75 @@ main {
 
 .countdown b {
     display: block;
-    font-size: clamp(36px, 8vw, 72px);
-    font-weight: 400
+    font-size: clamp(35px, 7vw, 72px);
+    font-weight: 400;
+    line-height: 1
 }
 
 .countdown span {
+    display: block;
+    margin-top: 8px;
     font: 9px Arial, sans-serif;
     text-transform: uppercase;
-    letter-spacing: .12em
+    letter-spacing: .14em
 }
 
 .place {
     display: grid;
     place-items: center;
     background: linear-gradient(#0008, #000c);
+    padding-top: 70px;
+    padding-bottom: 84px
 }
 
 .place-card {
-    width: min(100%, 680px);
-    background: #050505e8;
+    width: min(100%, 760px);
+    background: rgba(5, 5, 5, .82);
     border: 1px solid var(--linha);
-    padding: 36px 26px;
-    border-radius: 8px;
+    padding: 38px 26px 30px;
+    border-radius: 10px;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .28);
+    margin-bottom: 0
 }
 
 .place h2 {
-    font-size: clamp(35px, 6vw, 58px);
-    font-weight: 400
+    font-size: clamp(35px, 5.5vw, 58px);
+    font-weight: 400;
+    line-height: 1.08;
+    margin: 16px 0 10px
+}
+
+.place p {
+    color: #d9cfc4;
+    font-size: clamp(17px, 2vw, 22px)
 }
 
 .actions {
     display: flex;
     justify-content: center;
     gap: 12px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    margin-top: 22px
+}
+
+.actions a,
+.actions button {
+    min-width: 210px
 }
 
 .rsvp {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    background: #E8E0D6;
+    padding: 52px 22px 42px;
+    background:
+        radial-gradient(circle at 10% 8%, rgba(255, 255, 255, .78), transparent 20%),
+        radial-gradient(circle at 85% 12%, rgba(0, 0, 0, .035), transparent 18%),
+        repeating-linear-gradient(0deg, rgba(68, 52, 43, .03), rgba(68, 52, 43, .03) 1px, transparent 1px, transparent 4px),
+        #E8E0D6;
     color: #111;
-    border-radius: 12px;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
-    max-width: 720px;
+    max-width: 760px;
     margin: 20px auto;
     flex-direction: column;
     text-align: center;
@@ -344,7 +436,8 @@ main {
     color: #111;
     font-family: Georgia, serif;
     margin: 0 0 10px;
-    font-size: 32px;
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -.03em
 }
 
 .rsvp p,
@@ -357,18 +450,27 @@ main {
 }
 
 .rsvp .primary {
-    padding: 14px 28px;
+    padding: 16px 28px;
     font-size: 18px;
     background: var(--vinho);
     color: #fff;
     border-radius: 8px;
     border: 0;
+    min-width: min(100%, 360px);
+    box-shadow: 0 12px 28px rgba(125, 18, 28, .22)
+}
+
+.rsvp .primary:hover {
+    background: #991d27;
+    transform: translateY(-2px)
 }
 
 .rsvp small {
     display: block;
-    margin-top: 12px;
+    margin-top: 14px;
     color: #6b6b6b;
+    font-size: 14px;
+    letter-spacing: .02em
 }
 
 footer {
@@ -411,6 +513,10 @@ footer span {
 }
 
 @media(max-width:640px) {
+    .hero {
+        min-height: 620px
+    }
+
     .hero-photo {
         background-position: 56%
     }
@@ -419,8 +525,30 @@ footer span {
         inset: 10px
     }
 
+    .hero-content {
+        padding-bottom: 38px
+    }
+
     .hero h1 {
-        font-size: 43px
+        font-size: 42px;
+        line-height: .94;
+        margin-top: 12px
+    }
+
+    .hero h1 em {
+        margin: 6px 0 3px
+    }
+
+    .date {
+        letter-spacing: .12em
+    }
+
+    .hero small {
+        letter-spacing: .14em
+    }
+
+    .scroll {
+        letter-spacing: .18em
     }
 
     .section {
