@@ -25,7 +25,7 @@ document.getElementById('copyButton').addEventListener('click', async (event) =>
 
 document.getElementById('whatsappButton').addEventListener('click', () => {
   const mensagem = page === 'festa'
-    ? 'Olá, Bruno e Beatriz! Confirmo minha presença na festa de vocês em 17 de outubro. 🕺'
-    : 'Olá, Bruno e Beatriz! Confirmo minha presença no casamento de vocês em 16 de outubro e na festa no dia 17. 🖤';
+    ? 'Olá, Bruno e Beatriz! Confirmo minha presença na *festa de casamento* de vocês no dia 17 de outubro. 🕺'
+    : 'Olá, Bruno e Beatriz! Confirmo minha presença no *casamento* de vocês no dia 16 de outubro. 🖤';
   window.open(`https://wa.me/?text=${encodeURIComponent(mensagem)}`, '_blank');
 });

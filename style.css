@@ -563,6 +563,50 @@ body[data-page="festa"] .gift-note strong {
     font-weight: 700;
 }
 
+body[data-page="casamento"] .festa-callout {
+    margin: 10px 0 0;
+    font: 700 12px Arial, sans-serif;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--vermelho);
+}
+
+body[data-page="casamento"] .story h2 {
+    color: var(--vermelho);
+}
+
+body[data-page="casamento"] .story strong {
+    color: var(--vermelho);
+}
+
+body[data-page="casamento"] .rsvp {
+    background:
+        radial-gradient(circle at 20% 10%, rgba(255, 255, 255, .75), transparent 18%),
+        radial-gradient(circle at 80% 20%, rgba(28, 20, 18, .04), transparent 20%),
+        repeating-linear-gradient(0deg, rgba(38, 28, 22, .03), rgba(38, 28, 22, .03) 1px, transparent 1px, transparent 4px),
+        var(--claro);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+body[data-page="casamento"] .gift-note {
+    max-width: 760px;
+    margin: 0 auto 60px;
+    padding: 32px 20px 0;
+    text-align: center;
+    color: #f2e9df;
+}
+
+body[data-page="casamento"] .gift-note p {
+    margin: 0 0 12px;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.7;
+}
+
+body[data-page="casamento"] .gift-note strong {
+    color: var(--vermelho);
+    font-weight: 700;
+}
+
 .rsvp h2 {
     color: #111;
     font-family: Georgia, serif;
