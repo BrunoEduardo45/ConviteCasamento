@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Convite de casamento de Bruno Eduardo e Beatriz Biscarde">
-  <title>Bruno Eduardo & Beatriz Biscarde | 16.10.2026</title>
+  <meta name="description" content="Convite da festa de Bruno Eduardo e Beatriz Biscarde">
+  <title>Bruno Eduardo & Beatriz Biscarde | 17.10.2026</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-page="festa">
   <main>
     <section class="hero">
       <div class="hero-photo"></div>
@@ -21,7 +21,7 @@
           <em>&amp;</em>
           Bruno Eduardo
         </h1>
-        <strong class="date">16 · 10 · 2026</strong><small>Salvador · Bahia</small>
+        <p class="festa-callout">Festa do casamento</p>
         <a class="scroll" href="#convite">Abrir convite ↓</a>
       </div>
     </section>
@@ -45,40 +45,49 @@
       </div>
     </section>
 
-    <section class="when section">
-      <p class="eyebrow">Reserve esta data</p>
-      <h2>16 de outubro</h2>
+    <section class="when section festa-highlight">
+      <h2>17 de outubro de 2026</h2>
       <div class="details">
         <div class="detail-item">
-          <span class="label">Sexta-feira</span><b class="value">2026</b>
+          <span class="label">Sábado</span><b class="value">2026</b>
         </div>
         <div class="detail-item">
-          <span class="label">Cerimônia</span><b class="value">às 10h</b>
+          <span class="label">Início</span><b class="value">10h </br><span>Sem hora para acabar</span></b>
         </div>
         <div class="detail-item">
-          <span class="label">Graça</span><b class="value">Salvador</b>
+          <span class="label">Rio Vermelho</span><b class="value">Salvador</b>
         </div>
       </div>
-      <button class="primary" id="calendarButton">Adicionar ao calendário</button>
+
     </section>
 
-
-    <section class="rsvp section">
-      <h2>Esperamos você!</h2>
-      <button class="primary" id="whatsappButton">Confirmar presença</button>
-      <small>Abre uma mensagem pronta no WhatsApp.</small>
-    </section>
-
-
-    <section class="place section">
+    <section class="place newsection">
       <div class="place-card">
         <p class="eyebrow">Onde nos encontraremos</p>
-        <h2>Rua Professor<br>Martagão Gesteira, 477</h2>
-        <p>Graça · Salvador, Bahia</p>
-        <div class="actions"><a class="primary"
-            href="https://www.google.com/maps/search/?api=1&query=Rua+Professor+Martagao+Gesteira+477+Graca+Salvador"
-            target="_blank">Abrir no mapa</a><button class="ghost" id="copyButton">Copiar endereço</button></div>
+        <h2>Rua Itabuna, 148</h2>
+        <p>Rio Vermelho · Salvador, Bahia</p>
+        <div class="actions">
+          <a class="primary"
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Itabuna+148+Rio+Vermelho+Salvador"
+            target="_blank">Abrir no mapa</a>
+          <button class="ghost" id="copyButton" data-address="Rua Itabuna, 148, Rio Vermelho, Salvador">Copiar
+            endereço</button>
+        </div>
       </div>
+    </section>
+
+    <section class="rsvp section festa-rsvp">
+      <h2>Esperamos você!</h2>
+      <button class="primary" id="whatsappButton"><b>Confirmar presença</b></button>
+    </section>
+
+    <section class="gift-note section">
+      <p>Como vamos morar fora do Brasil, estamos tentando levar conosco menos coisas e mais histórias. Por isso,
+        não precisa se preocupar com o presente.</p>
+        <br>
+      <p>Mas, se ainda assim você quiser fazer questão de nos dar algo, pode fazê-lo transferindo via Pix para
+        <strong>beatrizbiscarde@gmail.com</strong>.
+      </p>
     </section>
 
   </main>

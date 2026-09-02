@@ -23,6 +23,14 @@ body {
     text-rendering: optimizeLegibility
 }
 
+body[data-page="festa"] {
+    --festivo: #d4a15a;
+    --festivo-escuro: #7d3d14;
+    --fundo-festa: #0d0d0b;
+    --fundo-papel: #efe3d1;
+    --texto-papel: #1d1a17;
+}
+
 button,
 a {
     font: inherit
@@ -39,6 +47,12 @@ main {
 .section {
     padding: 70px max(18px, calc((100vw - 850px)/2));
     text-align: center
+}
+
+.newsection {
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .eyebrow {
@@ -151,6 +165,11 @@ main {
     transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease
 }
 
+body[data-page="festa"] .scroll {
+    background: linear-gradient(180deg, var(--festivo) 0%, var(--festivo-escuro) 100%);
+    box-shadow: 0 10px 22px rgba(160, 95, 34, .28), inset 0 1px 0 rgba(255, 255, 255, .18);
+}
+
 .scroll:hover {
     opacity: 1;
     transform: translateY(-1px);
@@ -179,18 +198,13 @@ main {
     font-weight: 400;
     line-height: 1.12;
     max-width: 760px;
-    margin: 0 auto 30px
-}
-
-.story h2 i,
-.story strong {
-    color: #b44048
+    margin: 0 auto 30px;
+    color: var(--festivo);
 }
 
 .story>p:not(.ornament) {
     font-size: clamp(18px, 2.2vw, 23px);
     line-height: 1.7;
-    color: #cfc5bc;
     max-width: 700px;
     margin: 18px auto
 }
@@ -233,7 +247,7 @@ main {
     border-top: 1px solid var(--linha);
     border-bottom: 1px solid var(--linha);
     width: min(100%, 760px);
-    margin: 22px auto 30px;
+    margin: 22px auto 0;
     overflow: hidden
 }
 
@@ -375,8 +389,6 @@ main {
     display: grid;
     place-items: center;
     background: linear-gradient(#0008, #000c);
-    padding-top: 70px;
-    padding-bottom: 84px
 }
 
 .place-card {
@@ -414,22 +426,141 @@ main {
     min-width: 210px
 }
 
-.rsvp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 52px 22px 42px;
+body[data-page="festa"] .story {
+    background: radial-gradient(circle at 50% 15%, rgba(179, 121, 58, .12), rgba(13, 13, 11, .94) 50%);
+    color: #f7ebde;
+}
+
+body[data-page="festa"] .story h2 {
+    color: var(--festivo);
+}
+
+body[data-page="festa"] .story p,
+body[data-page="festa"] .story strong,
+body[data-page="festa"] .story h2 i,
+body[data-page="festa"] .story .eyebrow {
+    color: #f7ebde;
+}
+
+body[data-page="festa"] .story strong {
+    color: var(--festivo);
+}
+
+body[data-page="festa"] .when {
+    color: #f7ebde;
+}
+
+body[data-page="festa"] .when h2,
+body[data-page="festa"] .when .eyebrow,
+body[data-page="festa"] .details .detail-item .label,
+body[data-page="festa"] .details .detail-item .value,
+body[data-page="festa"] .place .eyebrow,
+body[data-page="festa"] .place-card p,
+body[data-page="festa"] .place-card h2,
+body[data-page="festa"] .gift-note p,
+body[data-page="festa"] .gift-note strong,
+body[data-page="festa"] .festive-note {
+    color: #f7ebde;
+}
+
+body[data-page="festa"] .rsvp h2 {
+    color: #1a1410;
+}
+
+body[data-page="festa"] .rsvp small {
+    display: none;
+}
+
+body[data-page="festa"] .primary {
+    background: var(--festivo);
+    color: #1a1410;
+    border-color: var(--festivo);
+    box-shadow: 0 10px 22px rgba(212, 161, 90, .22);
+}
+
+body[data-page="festa"] .primary:hover {
+    background: #c99143;
+    border-color: #c99143;
+    transform: translateY(-2px);
+}
+
+body[data-page="festa"] .details {
+    border-color: rgba(212, 161, 90, .5);
+}
+
+body[data-page="festa"] .details div {
+    border-left-color: rgba(212, 161, 90, .5);
+}
+
+body[data-page="festa"] .rsvp,
+body[data-page="festa"] .count-section {
     background:
-        radial-gradient(circle at 10% 8%, rgba(255, 255, 255, .78), transparent 20%),
-        radial-gradient(circle at 85% 12%, rgba(0, 0, 0, .035), transparent 18%),
-        repeating-linear-gradient(0deg, rgba(68, 52, 43, .03), rgba(68, 52, 43, .03) 1px, transparent 1px, transparent 4px),
-        #E8E0D6;
-    color: #111;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+        radial-gradient(circle at 15% 10%, rgba(255, 255, 255, .8), transparent 20%),
+        radial-gradient(circle at 80% 15%, rgba(110, 65, 28, .06), transparent 20%),
+        repeating-linear-gradient(0deg, rgba(88, 62, 35, .04), rgba(88, 62, 35, .04) 1px, transparent 1px, transparent 4px),
+        var(--fundo-papel);
+    color: var(--texto-papel);
+}
+
+body[data-page="festa"] .rsvp {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+body[data-page="festa"] .count-section {
+    color: var(--texto-papel);
+}
+
+body[data-page="festa"] .countdown b,
+body[data-page="festa"] .countdown span,
+body[data-page="festa"] .countdown div,
+body[data-page="festa"] .countdown span {
+    color: var(--texto-papel);
+}
+
+body[data-page="festa"] .hero h1 em {
+    color: var(--festivo);
+}
+
+body[data-page="festa"] .place-card {
+    border-color: rgba(212, 161, 90, .6);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .2);
+    background: rgba(8, 7, 6, .88);
+}
+
+body[data-page="festa"] .festa-callout {
+    margin: 10px 0 0;
+    font: 700 12px Arial, sans-serif;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--festivo);
+}
+
+body[data-page="festa"] .festive-note {
+    margin: 24px auto 0;
+    max-width: 640px;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.6;
+    color: #f0dcc4;
+    font-style: italic;
+}
+
+body[data-page="festa"] .gift-note {
     max-width: 760px;
-    margin: 20px auto;
-    flex-direction: column;
+    margin: 0 auto 60px;
+    padding: 32px 20px 0;
     text-align: center;
+    color: #f2e9df;
+}
+
+body[data-page="festa"] .gift-note p {
+    margin: 0 0 12px;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.7;
+}
+
+body[data-page="festa"] .gift-note strong {
+    color: var(--festivo);
+    font-weight: 700;
 }
 
 .rsvp h2 {
@@ -552,6 +683,10 @@ footer span {
     }
 
     .section {
+        padding-block: 48px
+    }
+
+    .newsection {
         padding-block: 48px
     }
 

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body data-page="casamento">
   <main>
     <section class="hero">
       <div class="hero-photo"></div>
@@ -61,6 +61,21 @@
       </div>
     </section>
 
+    <section class="when section">
+      <p class="eyebrow">Depois do casamento</p>
+      <h2>17 de outubro</h2>
+      <div class="details">
+        <div class="detail-item">
+          <span class="label">Sábado</span><b class="value">2026</b>
+        </div>
+        <div class="detail-item">
+          <span class="label">Festa</span><b class="value">a partir das 10h</b>
+        </div>
+        <div class="detail-item">
+          <span class="label">Rio Vermelho</span><b class="value">Salvador</b>
+        </div>
+      </div>
+    </section>
 
     <section class="rsvp section">
       <h2>Esperamos você!</h2>
@@ -68,15 +83,18 @@
       <small>Abre uma mensagem pronta no WhatsApp.</small>
     </section>
 
-
     <section class="place section">
       <div class="place-card">
         <p class="eyebrow">Onde nos encontraremos</p>
-        <h2>Rua Professor<br>Martagão Gesteira, 477</h2>
-        <p>Graça · Salvador, Bahia</p>
-        <div class="actions"><a class="primary"
-            href="https://www.google.com/maps/search/?api=1&query=Rua+Professor+Martagao+Gesteira+477+Graca+Salvador"
-            target="_blank">Abrir no mapa</a><button class="ghost" id="copyButton">Copiar endereço</button></div>
+        <h2>Rua Itabuna, 148</h2>
+        <p>Rio Vermelho · Salvador, Bahia</p>
+        <div class="actions">
+          <a class="primary"
+            href="https://www.google.com/maps/search/?api=1&query=Rua+Itabuna+148+Rio+Vermelho+Salvador"
+            target="_blank">Abrir no mapa</a>
+          <button class="ghost" id="copyButton" data-address="Rua Itabuna, 148, Rio Vermelho, Salvador">Copiar
+            endereço</button>
+        </div>
       </div>
     </section>
 
