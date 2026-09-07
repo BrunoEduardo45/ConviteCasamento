@@ -63,7 +63,7 @@ if (shareCerimoniaBtn) {
     compartilharWhatsapp(
       'Beatriz & Bruno · Cerimônia do Casamento',
       'Você está convidado(a) para a cerimônia de casamento de Beatriz & Bruno! 💒✨',
-      'https://brunoeduardo45.github.io/ConviteCasamento/Casamento.html'
+      'https://brunoeduardo45.github.io/ConviteCasamento/Casamento.html?convite=1'
     );
   });
 }
@@ -74,7 +74,7 @@ if (shareFestaBtn) {
     compartilharWhatsapp(
       'Beatriz & Bruno · Festa do Casamento',
       'Você está convidado(a) para a festa de casamento de Beatriz & Bruno! 🕺✨',
-      'https://brunoeduardo45.github.io/ConviteCasamento/Festa.html'
+      'https://brunoeduardo45.github.io/ConviteCasamento/Festa.html?convite=1'
     );
   });
 }
